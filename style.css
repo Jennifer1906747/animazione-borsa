@@ -1,0 +1,60 @@
+/* Stile base */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffcccc;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenitore principale */
+.container {
+    position: relative;
+    text-align: center;
+}
+
+/* Poster con la borsa */
+.poster {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+    display: block;
+}
+
+/* Immagine della scritta */
+.scritta {
+    position: absolute;
+    top: 40%; /* Posiziona la scritta più in basso */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px; /* Dimensione della scritta */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    pointer-events: none; /* Non interferisce col clic */
+}
+
+/* Effetto ondulazione */
+@keyframes ondula {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-10deg);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotate(5deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+/* Classe per attivare l'animazione */
+.scritta.animata {
+    animation: ondula 1s ease-in-out;
+}
